@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trend Optik Mersin | Luxury Showroom</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-theme="luxury">
+
+    <div id="announcementBar" class="announcement-bar">
+        <span id="announcementText">Koleksiyon Hazırlanıyor...</span>
+    </div>
+
+    <header>
+        <div class="header-container">
+            <div class="header-left-controls">
+                <button id="audioToggleBtn" class="ctrl-icon-btn">🎵</button>
+                <button id="langToggleBtn" class="ctrl-icon-btn" data-lang="tr">EN</button>
+                <div class="theme-palette-wrapper">
+                    <span class="theme-dot luxury" data-theme="luxury" title="Luxury Gold"></span>
+                    <span class="theme-dot midnight" data-theme="midnight" title="Midnight Blue"></span>
+                    <span class="theme-dot rose" data-theme="rose" title="Rose Gold"></span>
+                    <span class="theme-dot cyber" data-theme="cyber" title="Cyber Neon"></span>
+                </div>
+            </div>
+
+            <h1 class="logo">TREND OPTIK <span class="city">MERSIN</span></h1>
+            
+            <div class="burger-menu" id="burgerMenu">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </div>
+        </div>
+        
+        <nav class="nav-menu" id="navMenu">
+            <div class="nav-menu-inner">
+                <ul id="dynamicNavMenu">
+                    <li class="menu-divider" data-tr="NAVİGASYON" data-en="NAVIGATION">NAVİGASYON</li>
+                    <li><a href="#" class="brand-link main-nav-item" data-filter="all" data-tr="TÜM REYONLAR" data-en="ALL COLLECTIONS">TÜM REYONLAR</a></li>
+                    <li><a href="#" class="brand-link featured-nav-link main-nav-item" data-filter="featured" data-tr="★ ÖNE ÇIKANLAR" data-en="★ FEATURED">★ ÖNE ÇIKANLAR</a></li>
+                    
+                    <li class="menu-divider" data-tr="REYON KATEGORİLERİ" data-en="CATEGORIES">REYON KATEGORİLERİ</li>
+                    <li><a href="#" class="brand-link category-link" data-filter="gunes" data-tr="GÜNEŞ GÖZLÜKLERİ" data-en="SUNGLASSES">GÜNEŞ GÖZLÜKLERİ</a></li>
+                    <li><a href="#" class="brand-link category-link" data-filter="optik" data-tr="OPTİK GÖZLÜK" data-en="EYEGLASSES">OPTİK GÖZLÜK</a></li>
+                    
+                    <li class="menu-divider" data-tr="YÜZ ŞEKLİ SEÇİMİ" data-en="FACE SHAPE">YÜZ ŞEKLİ SEÇİMİ</li>
+                    <div class="face-shape-row">
+                        <li><a href="#" class="brand-link face-link" data-filter="yuvarlak" data-tr="YUVARLAK" data-en="ROUND">YUVARLAK</a></li>
+                        <li><a href="#" class="brand-link face-link" data-filter="kare" data-tr="KARE" data-en="SQUARE">KARE</a></li>
+                        <li><a href="#" class="brand-link face-link" data-filter="oval" data-tr="OVAL" data-en="OVAL">OVAL</a></li>
+                    </div>
+                    
+                    <li class="menu-divider" data-tr="PREMIUM MARKALAR" data-en="PREMIUM BRANDS">PREMIUM MARKALAR</li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="stories-wrapper">
+        <div class="story-node">
+            <div class="story-ring"><img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=80&q=80"></div>
+            <span data-tr="Yeni Gelenler" data-en="New Arrivals">Yeni Gelenler</span>
+        </div>
+        <div class="story-node">
+            <div class="story-ring"><img src="https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&w=80&q=80"></div>
+            <span data-tr="Prada Özel" data-en="Prada Special">Prada Özel</span>
+        </div>
+        <div class="story-node">
+            <div class="story-ring"><img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&w=80&q=80"></div>
+            <span data-tr="Trend 2026" data-en="Trend 2026">Trend 2026</span>
+        </div>
+    </div>
+
+    <div class="video-hero">
+        <video autoplay loop muted playsinline class="hero-video">
+            <source src="https://videos.pexels.com/video-files/8482512/8482512-uhd_2560_1440_25fps.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay"></div>
+        <div class="hero-content">
+            <h2>LUXURY SHOWROOM</h2>
+            <p id="gallery-status" data-tr="INTERAKTIF MODA KATALOĞU" data-en="INTERACTIVE FASHION CATALOG">INTERAKTIF MODA KATALOĞU</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="search-sort-wrapper">
+            <input type="text" id="showroomSearch" data-placeholder-tr="Model, renk, marka veya kategori ara..." data-placeholder-en="Search model, color, brand..." placeholder="Model, renk, marka veya kategori ara...">
+            <select id="showroomSort">
+                <option value="default" data-tr="Sıralama: Standart" data-en="Sort: Default">Sıralama: Standart</option>
+                <option value="price-asc" data-tr="Fiyat: Artan" data-en="Price: Low to High">Fiyat: Artan</option>
+                <option value="price-desc" data-tr="Fiyat: Azalan" data-en="Price: High to Low">Fiyat: Azalan</option>
+            </select>
+        </div>
+
+        <h3 class="section-title">DIGITAL EXHIBITION</h3>
+        <p class="section-subtitle" data-tr="Detayları incelemek için gözlüklere dokunabilirsiniz" data-en="Tap on sunglasses to view fine luxury details">Detayları incelemek için gözlüklere dokunabilirsiniz</p>
+        
+        <div class="luxury-catalog-grid" id="productGrid"></div>
+    </div>
+
+    <div id="floatingFavBasket" class="floating-fav-basket" style="display: none;">
+        <span class="basket-icon">❤</span>
+        <span class="basket-text" data-tr="Teklif İste" data-en="Get Quote">Teklif İste</span> (<span id="favCountLabel">0</span>)
+    </div>
+
+    <div id="productDetailModal" class="lux-detail-modal">
+        <div class="lux-detail-content">
+            <span class="lux-detail-close" id="closeDetailModal">×</span>
+            <div id="modalDetailBody"></div>
+        </div>
+    </div>
+
+    <div id="storeTourModal" class="lux-detail-modal" style="z-index: 210;">
+        <div class="lux-detail-content" style="text-align:center; max-width:400px;">
+            <span class="lux-detail-close" id="closeTourModal">×</span>
+            <h4 style="font-family:'Cinzel', serif; color:var(--gold-color); margin-bottom:15px;">TREND OPTİK SHOWROOM</h4>
+            <div style="width:100%; height:180px; background:#111; display:flex; align-items:center; justify-content:center; border:1px dashed var(--gold-color); border-radius:4px; margin-bottom:15px;">
+                <p style="font-size:11px; color:#666; padding:15px; line-height:1.6;" data-tr="Mersin Luxury showroomumuzun 360° interaktif dijital tur çekimleri devam etmektedir. En kısa sürede mağazamızın içini buradan gezebileceksiniz!" data-en="360° Virtual Tour is coming soon!">Mersin Luxury showroomumuzun 360° interaktif dijital tur çekimleri devam etmektedir. En kısa sürede mağazamızın içini buradan gezebileceksiniz!</p>
+            </div>
+            <button type="button" class="whatsapp-btn" id="tourModalCloseBtn" style="width:100%; background:#222; color:#fff;">KAPAT</button>
+        </div>
+    </div>
+
+    <section class="trust-slider-section">
+        <h4 class="trust-section-title" data-tr="MÜŞTERİ DENEYİMLERİ" data-en="CLIENT EXPERIENCES">MÜŞTERİ DENEYİMLERİ</h4>
+        <div class="trust-slider-container">
+            <div class="trust-slide active">
+                <p class="trust-text">"Mersin'de tek geçeceğim optik mağazası. Yeni gelen Prada Symbole serisini başka hiçbir yerde bulamamıştım, ilgi ve alaka muazzam."</p>
+                <p class="trust-author">Ahmet H. ★★★★★</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <h4 class="faq-section-title" data-tr="DOĞRU GÖZLÜK SEÇİM REHBERİ" data-en="EYEWEAR SELECTION GUIDE">DOĞRU GÖZLÜK SEÇİM REHBERİ</h4>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-trigger" data-tr="UV400 Koruma Nedir ve Neden Şarttır?" data-en="What is UV400 Protection?">UV400 Koruma Nedir ve Neden Şarttır?</div>
+                <div class="faq-content"><p data-tr="Gözlerinizi güneşin zararlı ultraviyole ışınlarından %100 oranında koruyan, katarakt ve göz yaşlanmasını engelleyen en üst düzey lüks lens teknolojisidir." data-en="It blocks 100% of harmful UV rays to protect eye health.">Gözlerinizi güneşin zararlı ultraviyole ışınlarından %100 oranında koruyan, katarakt ve göz yaşlanmasını engelleyen en üst düzey lüks lens teknolojisidir.</p></div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-trigger" data-tr="Polarize Cam ile Standart Cam Arasındaki Fark Nedir?" data-en="Difference Between Polarized & Standard Lenses?">Polarize Cam ile Standart Cam Arasındaki Fark Nedir?</div>
+                <div class="faq-content"><p data-tr="Polarize camlar, Mersin denizinden veya araç camlarından yansıyan parlamaları tamamen kırar; özellikle sürüş ve deniz aktivitelerinde kusursuz netlik sağlar." data-en="Polarized lenses eliminate reflections from water or roads for crystal clear vision.">Polarize camlar, Mersin denizinden veya araç camlarından yansıyan parlamaları tamamen kırar; özellikle sürüş ve deniz aktivitelerinde kusursuz netlik sağlar.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="store-info-section">
+        <div class="store-info-container">
+            <h3 class="store-title">MERSIN SHOWROOM</h3>
+            <div id="liveStoreStatus" class="live-store-status"></div>
+
+            <div class="store-details-grid">
+                <div class="store-detail-card">
+                    <h5 data-tr="ÇALIŞMA SAATLERİ" data-en="WORKING HOURS">ÇALIŞMA SAATLERİ</h5>
+                    <p id="liveLabelHours">Pazartesi - Cumartesi: 09:00 - 20:00</p>
+                </div>
+                <div class="store-detail-card">
+                    <h5 data-tr="İLETİŞİM & ADRES" data-en="CONTACT & ADDRESS">İLETİŞİM & ADRES</h5>
+                    <p id="liveLabelAddress">Merkez, Atatürk Caddesi No:123/A Yenişehir / Mersin</p>
+                    <p id="liveLabelPhone">Tel: +90 (530) 911 25 68</p>
+                </div>
+            </div>
+
+            <div class="store-action-btn-row">
+                <a href="https://maps.google.com" target="_blank" class="maps-btn">📍 ADRES HARİTASI</a>
+                <a href="#" id="triggerLiveStoreTourBtn" class="maps-btn 360-btn" style="border-color:var(--gold-color); color:var(--gold-color);" data-tr="✨ 360° MAĞAZA İÇİ TUR" data-en="✨ 360° VIRTUAL TOUR">✨ 360° MAĞAZA İÇİ TUR</a>
+                <a href="tel:+905309112568" id="liveCallBtnHref" class="maps-btn call-direct-btn" style="background:#fff; color:#000;" data-tr="📞 SHOWROOMU DOĞRUDAN ARA" data-en="📞 CALL SHOWROOM DIRECTLY">📞 SHOWROOMU DOĞRUDAN ARA</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="instagram-feed-section">
+        <h4 class="ig-section-title">@trendoptikmersin ON INSTAGRAM</h4>
+        <div class="instagram-mock-grid">
+            <div class="ig-post"><img src="https://images.unsplash.com/photo-1511556532299-8f662fc26c06?auto=format&fit=crop&w=400&q=80"></div>
+            <div class="ig-post"><img src="https://images.unsplash.com/photo-1591076482161-42ce6da69f67?auto=format&fit=crop&w=400&q=80"></div>
+            <div class="ig-post"><img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=400&q=80"></div>
+            <div class="ig-post"><img src="https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&w=400&q=80"></div>
+        </div>
+    </section>
+
+    <footer>
+        <p class="footer-brand">TREND OPTIK MERSIN</p>
+        <span class="copyright">© 2026 Trend Optik Mersin. All Rights Reserved.</span>
+    </footer>
+
+    <audio id="luxuryBackgroundMusic" loop src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" preload="auto"></audio>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

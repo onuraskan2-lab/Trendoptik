@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trend Optik | Secure Control Center</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="admin-body-bg">
+
+    <div id="adminAuthScreen" class="admin-auth-screen">
+        <div class="auth-card">
+            <h2>TREND OPTIK</h2>
+            <h3>SECURE GATEWAY</h3>
+            <div class="auth-form-group">
+                <input type="password" id="securePassField" placeholder="Sistem Erişim Şifresi">
+                <button id="secureLoginBtn" type="button">SİSTEME BAĞLAN</button>
+            </div>
+            <p><a href="index.html" style="color:#555; font-size:11px; text-decoration:none;">← Vitrine Dön</a></p>
+        </div>
+    </div>
+
+    <div id="secureMainDashboard" class="secure-main-dashboard" style="display: none;">
+        
+        <div class="admin-section-block">
+            <div class="block-header"><span>01</span> SİTE ÜST DUYURU BANDI AYARI</div>
+            <div class="form-group">
+                <label>ANLIK DUYURU METNİ</label>
+                <div style="display:flex; gap:10px;">
+                    <input type="text" id="announcementInput" placeholder="Örn: Mağazamızda Seçili Prada Gözlüklerde %20 İndirim!">
+                    <button type="button" id="saveAnnouncementBtn" class="admin-submit-btn" style="width:120px; margin:0;">GÜNCELLE</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="admin-section-block">
+            <div class="block-header"><span>02</span> FİZİKSEL DÜKKAN REHBERİ VE 360° TUR BAĞLANTI AYARI</div>
+            <form id="storeConfigForm" class="admin-form">
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label>WHATSAPP HATTI (SIFIR OLMADAN)</label>
+                        <input type="number" id="cfgStorePhone" placeholder="5309112568" required>
+                    </div>
+                    <div class="form-group half">
+                        <label>ÇALIŞMA SAATLERİ METNİ</label>
+                        <input type="text" id="cfgStoreHours" placeholder="Pazartesi - Cumartesi: 09:00 - 20:00" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>MAĞAZA FİZİKSEL ADRESİ</label>
+                    <input type="text" id="cfgStoreAddress" placeholder="Atatürk Caddesi No:123/A Yenişehir / Mersin" required>
+                </div>
+                <div class="form-group">
+                    <label>360° SANAL MAĞAZA TURU VEYA TANITIM VİDEOSU LİNKİ (OPSİYONEL)</label>
+                    <input type="text" id="cfgStoreTourUrl" placeholder="Örn: Google Maps veya YouTube video linki">
+                </div>
+                <button type="submit" class="admin-submit-btn" style="background:#fff; color:#000;">MAĞAZA AYARLARINI CANLIYA AL</button>
+            </form>
+        </div>
+
+        <div class="admin-section-block">
+            <div class="block-header"><span>03</span> DİNAMİK MARKA TANIMLAMA VE SİLME SEPETİ</div>
+            <form id="brandForm" class="admin-form" style="margin-bottom:15px;">
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label>MARKA ADI</label>
+                        <input type="text" id="brandName" placeholder="Örn: Tom Ford" required>
+                    </div>
+                    <div class="form-group half">
+                        <label>MARKA LOGOSU (OPSİYONEL)</label>
+                        <input type="file" id="brandLogoFile" accept="image/*" class="file-input" style="padding:10px !important;">
+                    </div>
+                </div>
+                <button type="submit" class="admin-submit-btn-gold">YENİ MARKAYI VERİ TABANINA KAYDET</button>
+            </form>
+            <label>SİSTEMDE AKTİF DURAN MARKALARINIZ</label>
+            <div id="adminBrandsContainerList" class="admin-control-list" style="max-height:140px;"></div>
+        </div>
+
+        <div class="admin-section-block">
+            <div class="block-header"><span>04</span> REYONA YENİ MODEL ENTEGRASYONU</div>
+            <form id="adminForm" class="admin-form">
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label>MARKA SEÇİNİZ</label>
+                        <select id="prodBrand" required></select>
+                    </div>
+                    <div class="form-group half">
+                        <label>REYON KATEGORİSİ</label>
+                        <select id="prodCategory" required>
+                            <option value="gunes">GÜNEŞ GÖZLÜĞÜ</option>
+                            <option value="optik">OPTİK GÖZLÜK</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label>MODEL ADI VE SERİ KODU</label>
+                        <input type="text" id="prodTitle" placeholder="Örn: Aviator RB3025" required>
+                    </div>
+                    <div class="form-group half">
+                        <label>UYGUN YÜZ ŞEKLİ SÜZGECİ</label>
+                        <select id="prodFaceShape" required>
+                            <option value="yuvarlak">YUVARLAK YÜZ</option>
+                            <option value="kare">KARE YÜZ</option>
+                            <option value="oval">OVAL YÜZ</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label>ÇERÇEVE RENK FİLTRESİ</label>
+                        <select id="prodColor" required>
+                            <option value="siyah">Siyah</option>
+                            <option value="altin">Altın Sarısı</option>
+                            <option value="gümüs">Gümüş Gri</option>
+                            <option value="kemik">Kemik / Kahve</option>
+                            <option value="seffaf">Şeffaf</option>
+                        </select>
+                    </div>
+                    <div class="form-group half">
+                        <label>CAM TEKNOLOJİSİ SÜZGECİ</label>
+                        <select id="prodLens" required>
+                            <option value="polarize">Polarize Koruma</option>
+                            <option value="aynali">Aynalı Parlak Cam</option>
+                            <option value="gece">Gece Sürüş Lens</option>
+                            <option value="standart">UV400 Standart</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label>ÇERÇEVE MALZEMESİ</label>
+                        <select id="prodMaterial" required>
+                            <option value="asetat">Premium Asetat</option>
+                            <option value="titanyum">Hafif Titanyum</option>
+                            <option value="metal">Klasik Metal</option>
+                        </select>
+                    </div>
+                    <div class="form-group half">
+                        <label>HEDEF CİNSİYET</label>
+                        <select id="prodGender" required>
+                            <option value="uniseks">Uniseks (Herkes İçin)</option>
+                            <option value="kadin">Kadın Seçkisi</option>
+                            <option value="erkek">Erkek Seçkisi</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group" style="width:33.33%">
+                        <label>EKARTMAN (mm)</label>
+                        <input type="number" id="prodEkartman" placeholder="53" required>
+                    </div>
+                    <div class="form-group" style="width:33.33%">
+                        <label>KÖPRÜ (mm)</label>
+                        <input type="number" id="prodKopru" placeholder="18" required>
+                    </div>
+                    <div class="form-group" style="width:33.33%">
+                        <label>SAP BOYU (mm)</label>
+                        <input type="number" id="prodSap" placeholder="140" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label>STANDART FİYAT (TL)</label>
+                        <input type="number" id="prodPrice" required>
+                    </div>
+                    <div class="form-group half">
+                        <label>İNDİRİMLİ SATIŞ FİYATI (TL)</label>
+                        <input type="number" id="prodDiscountPrice">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>STOK ETİKET DURUMU</label>
+                    <select id="prodLabel">
+                        <option value="none">YOK (STANDART REYON)</option>
+                        <option value="MERSİN MAĞAZASINDA SON 1 ÜRÜN">MERSİN MAĞAZASINDA SON 1 ÜRÜN</option>
+                        <option value="ÖZEL TAHSİSLİ SERİ">ÖZEL TAHSİSLİ SERİ</option>
+                        <option value="SON 2 ÜRÜN">SON 2 ÜRÜN</option>
+                        <option value="SÜPER İNDİRİM">SÜPER İNDİRİM</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>FOTOĞRAFLARI SEÇİN</label>
+                    <input type="file" id="prodFiles" accept="image/*" multiple required class="file-input">
+                    <div class="preview-title" id="previewTitle" style="display:none;">Ana Sayfa Kart Kapak Fotoğrafını Seçin:</div>
+                    <div class="admin-preview-grid" id="adminPreviewGrid"></div>
+                </div>
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="prodFeatured" class="lux-checkbox">
+                    <label for="prodFeatured" class="checkbox-label">★ BU MODELİ ANA SAYFA ÖNE ÇIKANLARA EKLE</label>
+                </div>
+                <button type="submit" class="admin-submit-btn">GÖZLÜĞÜ REYONA KAYDET</button>
+            </form>
+        </div>
+
+        <div class="admin-section-block">
+            <div class="block-header"><span>05</span> TOPLU İNDİRİM KAMPANYA ŞALTERİ</div>
+            <form id="bulkDiscountForm" class="admin-form">
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label>KAMPANYA YAPILACAK MARKA</label>
+                        <select id="bulkBrandTarget" required></select>
+                    </div>
+                    <div class="form-group half">
+                        <label>TOPLU İNDİRİM TUTARI (TL)</label>
+                        <input type="number" id="bulkDiscountAmount" placeholder="500" required>
+                    </div>
+                </div>
+                <button type="submit" class="admin-submit-btn" style="background:#ff4444; color:#fff;">KAMPANYAYI BAŞLAT (TÜM MODELLERE UYGULA)</button>
+            </form>
+        </div>
+
+        <div class="admin-section-block">
+            <div class="block-header"><span>06</span> REYON KONTROL, SAYAÇ ANALİZLERİ VE QR BARKOD MASASI</div>
+            <div id="adminProductControlList" class="admin-control-list"></div>
+        </div>
+
+        <div class="admin-section-block">
+            <div class="block-header"><span>07</span> SİSTEM YEDEKLEME VE GÜVENLİK SİGORTASI</div>
+            <div class="admin-backup-zone" style="margin:0 0 15px 0;">
+                <div class="backup-btn-row">
+                    <button id="exportBackupBtn" type="button" class="backup-btn export">📥 Mağaza Yedeğini İndir</button>
+                    <label for="importBackupFile" class="backup-btn import">📤 Dosyadan Yedek Yükle</label>
+                    <input type="file" id="importBackupFile" accept=".json" style="display:none;">
+                </div>
+            </div>
+            <button id="clearStorageBtn" type="button" class="admin-clear-btn">Fabrika Ayarlarına Dön</button>
+            <button id="adminQuickExit" type="button" class="admin-logout-btn">Yönetim Panelinden Çıkış Yap</button>
+        </div>
+
+    </div>
+
+    <div id="qrPrintIsolatedFrame" class="isolated-print-layout" style="display:none;"></div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
